@@ -27,7 +27,7 @@
 
 <body class="hold-transition fixed skin-red sidebar-mini">
 	<div class="wrapper">
-		<header class="main-header"> <a href="" class="logo"> <span
+		<header class="main-header"> <a href="${pageContext.request.contextPath}/index" class="logo"> <span
 			class="logo-mini"><img src="" alt=""></span> <span
 			class="logo-lg"><b>LBU</b></span>
 		</a> <nav class="navbar navbar-static-top"> <a href=""

@@ -6,9 +6,10 @@
 </head>
 <body>
 <h1>
-	Hello world!  
+	Aplikasi LBU (Laporan Bulanan Bank Umum)  
 </h1>
 
-<P>  The time on the server is ${serverTime}. </P>
+<P>  YA-HA! </P>
+<a href="${pageContext.request.contextPath}/create/form04">Form 04</a>
 </body>
 </html>
