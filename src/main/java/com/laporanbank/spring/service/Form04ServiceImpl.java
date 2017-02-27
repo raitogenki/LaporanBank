@@ -1,5 +1,7 @@
 package com.laporanbank.spring.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -23,6 +25,12 @@ public class Form04ServiceImpl implements Form04Service {
 		this.form04DAO.createForm(f);
 	}
 
+	@Override
+	@Transactional
+	public List<Form04> readForm() {
+		return this.form04DAO.readForm();
+	}
+	
 	@Override
 	@Transactional
 	public void updateForm(Form04 f) {

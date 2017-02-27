@@ -3,11 +3,11 @@ package com.laporanbank.spring;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.laporanbank.spring.model.Form04;
 import com.laporanbank.spring.service.Form04Service;
@@ -23,10 +23,12 @@ public class Form04Controller {
 		this.form04Service = fs;
 	}
 	
-	@RequestMapping(value="/create/form04")
-	public ModelAndView mainPage() {
-		return new ModelAndView("form04");
-	}
+	@RequestMapping(value = "/create/form04", method = RequestMethod.GET)
+	    public String createForm04(Model model) {
+		model.addAttribute("form04", new Form04());
+		
+		return "form04";
+    }
 	
 	// For create and update form04 both
 	@RequestMapping(value = "/create/form04/submit", method = RequestMethod.POST)

@@ -1,5 +1,7 @@
 package com.laporanbank.spring.dao;
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.slf4j.Logger;
@@ -23,6 +25,17 @@ public class Form04DAOImpl implements Form04DAO {
 		Session session = this.sessionFactory.getCurrentSession();
 		session.persist(f);
 		logger.info("Form 04 saved successfully, Form Details=" + f);
+	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Form04> readForm() {
+		Session session = this.sessionFactory.getCurrentSession();
+		List<Form04> formData = session.createQuery("from Form04").list();
+		for	(Form04	f : formData){
+			logger.info("Form Data::" + f);
+		}
+		return formData;
 	}
 
 	@Override
@@ -49,5 +62,4 @@ public class Form04DAOImpl implements Form04DAO {
 		}
 		logger.info("Form 04 deleted successfully, Form Details=" + f);
 	}
-
 }

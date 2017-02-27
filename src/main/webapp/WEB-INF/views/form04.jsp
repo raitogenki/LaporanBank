@@ -1,7 +1,11 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@taglib prefix ="form" uri="http://www.springframework.org/tags/form"%>
+<%@page session="false"	%>
+<%@page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"-->
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -52,24 +56,25 @@
 							PADA BANK INDONESIA</h3>
 					</div>
 					<div class="box-body">
-						<form role="form">
+						<c:url var="submitAction" value="/create/form04/submit"></c:url>
+						<form:form role="form" action="${submitAction}" commandName="form04">
 							<div class="form-group">
 								<table class="table table-condensed table-hover">
 									<tr>
 										<td><label>Jenis</label></td>
-										<td><select id="sJenis" name="jenis" class="form-control">
-												<option value="10">Giro</option>
-												<option value="22">Term Deposit</option>
-												<option value="24">Deposit Facility</option>
-												<option value="90">Lainnya</option>
-										</select></td>
+										<td><form:select id="sJenis" path="jenis" class="form-control">
+												<form:option value="10">Giro</form:option>
+												<form:option value="22">Term Deposit</form:option>
+												<form:option value="24">Deposit Facility</form:option>
+												<form:option value="90">Lainnya</form:option>
+										</form:select></td>
 									</tr>
 									<tr>
 										<td><label>Jenis Valuta</label></td>
-										<td><select name="jenis_valuta" class="form-control">
-												<option value="1">Valuta 1</option>
-												<option value="2">Valuta 2</option>
-										</select></td>
+										<td><form:select path="jenis_valuta" class="form-control">
+												<form:option value="1">Valuta 1</form:option>
+												<form:option value="2">Valuta 2</form:option>
+										</form:select></td>
 									</tr>
 									<tr>
 										<td><label>Jangka Waktu</label></td>
@@ -82,8 +87,8 @@
 												<div class="input-group-addon">
 													<i class="fa fa-calendar"></i>
 												</div>
-												<input type="text" name="jangka_mulai"
-													class="form-control datepicker" required>
+												<form:input type="text" path="jangka_mulai"
+													class="form-control datepicker" required="required"/>
 											</div>
 										</td>
 									</tr>
@@ -94,8 +99,8 @@
 												<div class="input-group-addon">
 													<i class="fa fa-calendar"></i>
 												</div>
-												<input type="text" name="jangka_jatuh_tempo"
-													class="form-control datepicker" required>
+												<form:input type="text" path="jangka_jatuh_tempo"
+													class="form-control datepicker" required="required"/>
 											</div>
 										</td>
 									</tr>
@@ -106,8 +111,8 @@
 												<div class="input-group-addon">
 													<i class="fa fa-money"></i>
 												</div>
-												<input type="number" name="suku_bunga" class="form-control"
-													required>
+												<form:input type="number" path="suku_bunga" class="form-control"
+											 		min="0.0" required="required"/>
 											</div>
 										</td>
 									</tr>
@@ -118,15 +123,15 @@
 												<div class="input-group-addon">
 													<i class="fa fa-money"></i>
 												</div>
-												<input type="number" name="jumlah" class="form-control"
-													required>
+												<form:input type="number" path="jumlah" class="form-control"
+													min="0.0" required="required"/>
 											</div>
 										</td>
 									</tr>
 								</table>
 								<button type="submit" name="submit_form" class="btn btn-danger">Submit</button>
 							</div>
-						</form>
+						</form:form>
 					</div>
 				</div>
 			</div>

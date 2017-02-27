@@ -1,11 +1,15 @@
 package com.laporanbank.spring.model;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name = "form04")
@@ -23,10 +27,12 @@ public class Form04 {
 	private int jenis_valuta;
 	
 	@Column(name = "jangka_mulai")
-	private String jangka_mulai;
+	@DateTimeFormat(pattern = "ddMMyyyy")
+	private Date jangka_mulai;
 	
 	@Column(name = "jangka_jatuh_tempo")
-	private String jangka_jatuh_tempo;
+	@DateTimeFormat(pattern = "ddMMyyyy")
+	private Date jangka_jatuh_tempo;
 	
 	@Column(name = "suku_bunga")
 	private double suku_bunga;
@@ -58,19 +64,19 @@ public class Form04 {
 		this.jenis_valuta = jenis_valuta;
 	}
 
-	public String getJangka_mulai() {
+	public Date getJangka_mulai() {
 		return jangka_mulai;
 	}
 
-	public void setJangka_mulai(String jangka_mulai) {
+	public void setJangka_mulai(Date jangka_mulai) {
 		this.jangka_mulai = jangka_mulai;
 	}
 
-	public String getJangka_jatuh_tempo() {
+	public Date getJangka_jatuh_tempo() {
 		return jangka_jatuh_tempo;
 	}
 
-	public void setJangka_jatuh_tempo(String jangka_jatuh_tempo) {
+	public void setJangka_jatuh_tempo(Date jangka_jatuh_tempo) {
 		this.jangka_jatuh_tempo = jangka_jatuh_tempo;
 	}
 
