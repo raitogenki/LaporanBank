@@ -29,13 +29,13 @@ public class Form04DAOImpl implements Form04DAO {
 	
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Form04> readForm() {
+	public List<Form04> listForm() {
 		Session session = this.sessionFactory.getCurrentSession();
-		List<Form04> formData = session.createQuery("from Form04").list();
-		for	(Form04	f : formData){
-			logger.info("Form Data::" + f);
+		List<Form04> formList = session.createQuery("from Form04").list();
+		for	(Form04	fL : formList){
+			logger.info("Form List::" + fL);
 		}
-		return formData;
+		return formList;
 	}
 
 	@Override
@@ -48,7 +48,7 @@ public class Form04DAOImpl implements Form04DAO {
 	@Override
 	public Form04 getFormById(int id) {
 		Session session = this.sessionFactory.getCurrentSession();
-		Form04 f = (Form04) session.load(Form04.class, new	Integer(id));
+		Form04 f = (Form04) session.get(Form04.class, new	Integer(id));
 		logger.info("Form 04 loaded successfully, Form Details=" + f);
 		return f;
 	}

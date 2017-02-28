@@ -27,8 +27,8 @@ public class Form04ServiceImpl implements Form04Service {
 
 	@Override
 	@Transactional
-	public List<Form04> readForm() {
-		return this.form04DAO.readForm();
+	public List<Form04> listForm() {
+		return this.form04DAO.listForm();
 	}
 	
 	@Override

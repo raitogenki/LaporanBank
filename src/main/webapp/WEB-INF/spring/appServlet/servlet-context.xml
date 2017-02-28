@@ -46,6 +46,12 @@
 		</beans:property>
 	</beans:bean>
 	
+	<beans:bean	id="userDAO" class="com.laporanbank.spring.dao.UserDAOImpl">
+		<beans:property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
+	</beans:bean>
+	<beans:bean	id="userService" class="com.laporanbank.spring.service.UserServiceImpl">
+		<beans:property	name="userDAO" ref="userDAO"></beans:property>
+	</beans:bean>
 	<beans:bean	id="form04DAO" class="com.laporanbank.spring.dao.Form04DAOImpl">
 		<beans:property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
 	</beans:bean>

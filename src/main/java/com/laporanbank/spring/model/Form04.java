@@ -1,5 +1,6 @@
 package com.laporanbank.spring.model;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -14,31 +15,34 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Entity
 @Table(name = "form04")
 public class Form04 {
-	
+
 	@Id
 	@Column(name = "id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private	int	id;
-	
+	private int id;
+
 	@Column(name = "jenis")
 	private int jenis;
-	
+
 	@Column(name = "jenis_valuta")
 	private int jenis_valuta;
-	
+
 	@Column(name = "jangka_mulai")
 	@DateTimeFormat(pattern = "ddMMyyyy")
 	private Date jangka_mulai;
-	
+
 	@Column(name = "jangka_jatuh_tempo")
 	@DateTimeFormat(pattern = "ddMMyyyy")
 	private Date jangka_jatuh_tempo;
-	
+
 	@Column(name = "suku_bunga")
-	private double suku_bunga;
-	
+	private BigDecimal suku_bunga;
+
 	@Column(name = "jumlah")
-	private double jumlah;
+	private BigDecimal jumlah;
+	
+	@Column(name = "status")
+	private boolean status;
 
 	public int getId() {
 		return id;
@@ -80,19 +84,27 @@ public class Form04 {
 		this.jangka_jatuh_tempo = jangka_jatuh_tempo;
 	}
 
-	public double getSuku_bunga() {
+	public BigDecimal getSuku_bunga() {
 		return suku_bunga;
 	}
 
-	public void setSuku_bunga(double suku_bunga) {
+	public void setSuku_bunga(BigDecimal suku_bunga) {
 		this.suku_bunga = suku_bunga;
 	}
 
-	public double getJumlah() {
+	public BigDecimal getJumlah() {
 		return jumlah;
 	}
 
-	public void setJumlah(double jumlah) {
+	public void setJumlah(BigDecimal jumlah) {
 		this.jumlah = jumlah;
+	}
+
+	public boolean isStatus() {
+		return status;
+	}
+
+	public void setStatus(boolean status) {
+		this.status = status;
 	}
 }
