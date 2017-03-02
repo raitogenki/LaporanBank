@@ -23,9 +23,9 @@ public class Form04Controller {
 		this.form04Service = fs;
 	}
 
-	@RequestMapping(value = "/create/form04", method = RequestMethod.GET)
-	public String createForm04(Model model) {
-		model.addAttribute("form04", new Form04());
+	@RequestMapping(value = "/create/form04/{id}", method = RequestMethod.GET)
+	public String createForm04(@PathVariable("id") int id, Model model) {
+		model.addAttribute("form04", new Form04(id));
 
 		return "form04";
 	}
@@ -36,23 +36,23 @@ public class Form04Controller {
 		if (f.getId() == 0) {
 			// new form, create it
 			this.form04Service.createForm(f);
+			return "redirect:/create";
 		} else {
 			// existing form, call update
 			this.form04Service.updateForm(f);
+			return "redirect:/update";
 		}
-		return "redirect:/";
 	}
 
 	@RequestMapping("/delete/form04/{id}")
 	public String deleteForm04(@PathVariable("id") int id) {
 		this.form04Service.deleteForm(id);
-		return "redirect:/";
+		return "redirect:/delete";
 	}
 
 	@RequestMapping("/update/form04/{id}")
 	public String editForm04(@PathVariable("id") int id, Model model) {
-		model.addAttribute("form04", this.form04Service.getFormById(id));
-		model.addAttribute("listForm", this.form04Service.listForm());
+		model.addAttribute("form04", this.form04Service.readForm(id));
 		return "form04";
 	}
 }

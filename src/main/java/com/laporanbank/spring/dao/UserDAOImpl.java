@@ -35,4 +35,12 @@ public class UserDAOImpl implements UserDAO {
 		return userList;
 	}
 
+	@Override
+	public User readUser(String username) {
+		Session session = this.sessionFactory.getCurrentSession();
+		User u = (User) session.get(User.class, new String(username));
+		logger.info("User loaded successfully, User Details=" + u);
+		return u;
+	}
+
 }

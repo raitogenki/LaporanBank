@@ -20,8 +20,8 @@
 	<div class="wrapper">
 		<header class="main-header">
 			<a href="${pageContext.request.contextPath}/index" class="logo">
-				<span class="logo-mini"><img src="" alt=""></span> <span
-				class="logo-lg"><b>LBU</b></span>
+				<span class="logo-mini"><b>LBU</b><img src="" alt=""></span> <span
+				class="logo-lg">Aplikasi<b>LBU</b></span>
 			</a>
 			<nav class="navbar navbar-static-top">
 				<a href="" class="sidebar-toggle" data-toggle="offcanvas"
@@ -33,19 +33,10 @@
 			<section class="sidebar">
 				<ul class="sidebar-menu">
 					<li class="header">MENU</li>
-					<li class="treeview">
-						<a href="">
-							<i class="fa fa-plus"></i>
-							<span>Create</span>
-							<span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
-						</a>
-						<ul class="treeview-menu">
-							<li><a href="${pageContext.request.contextPath}/create/form04"><i class="fa fa-circle-o"></i> Form 04</a></li>
-						</ul>
-					</li>
-					<li><a href=""><i class="fa fa-eye"></i><span>Read</span></a></li>
-					<li><a href=""><i class="fa fa-pencil"></i><span>Update</span></a></li>
-					<li><a href=""><i class="fa fa-trash"></i><span>Delete</span></a></li>
+					<li><a href="${pageContext.request.contextPath}/create"><i class="fa fa-plus"></i><span>Create</span></a></li>
+					<li><a href="${pageContext.request.contextPath}/read"><i class="fa fa-eye"></i><span>Read</span></a></li>
+					<li><a href="${pageContext.request.contextPath}/update"><i class="fa fa-pencil"></i><span>Update</span></a></li>
+					<!-- li><a href=""><i class="fa fa-trash"></i><span>Delete</span></a></li -->
 				</ul>
 			</section>
 		</aside>
@@ -56,8 +47,7 @@
 						<div class="box-header">
 							<h3 class="box-title"></h3>
 						</div>
-						<div class="box-body">
-						</div>
+						<div class="box-body"></div>
 					</div>
 				</div>
 				<div class="box box-solid">
@@ -65,8 +55,7 @@
 						<div class="box-header">
 							<h3 class="box-title"></h3>
 						</div>
-						<div class="box-body">
-						</div>
+						<div class="box-body"></div>
 					</div>
 				</div>
 			</section>

@@ -23,4 +23,9 @@ public class UserServiceImpl implements UserService {
 		return this.userDAO.listUser(user);
 	}
 
+	@Override
+	public User readUser(String username) {
+		return userDAO.readUser(username);
+	}
+
 }

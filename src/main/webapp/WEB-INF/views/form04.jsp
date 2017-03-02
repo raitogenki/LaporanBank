@@ -46,7 +46,16 @@
 			<section class="sidebar">
 				<ul class="sidebar-menu">
 					<li class="header">MENU</li>
-					<li class="active"><a href=""><i class="fa fa-plus"></i><span>Create</span></a></li>
+					<li class="treeview active"><a href=""> <i
+							class="fa fa-plus"></i> <span>Create</span> <span
+							class="pull-right-container"><i
+								class="fa fa-angle-left pull-right"></i></span>
+					</a>
+						<ul class="treeview-menu">
+							<li class="active"><a
+								href="${pageContext.request.contextPath}/create/form04"><i
+									class="fa fa-circle-o"></i> Form 04</a></li>
+						</ul></li>
 					<li><a href=""><i class="fa fa-eye"></i><span>Read</span></a></li>
 					<li><a href=""><i class="fa fa-pencil"></i><span>Update</span></a></li>
 					<li><a href=""><i class="fa fa-trash"></i><span>Delete</span></a></li>
@@ -55,7 +64,9 @@
 		</aside>
 		<div class="content-wrapper">
 			<section class="content-header">
-				<h1>Laporan Bank<small>Januari 2017</small></h1>
+				<h1>
+					Laporan Bank<small>Januari 2017</small>
+				</h1>
 			</section>
 			<section class="content">
 				<div class="box box-solid">
@@ -72,8 +83,7 @@
 									<table class="table table-condensed table-hover">
 										<tr>
 											<td><label>Jenis</label></td>
-											<td><form:select id="sJenis" path="jenis"
-													class="form-control">
+											<td><form:select path="jenis" class="form-control">
 													<form:option value="10">Giro</form:option>
 													<form:option value="22">Term Deposit</form:option>
 													<form:option value="24">Deposit Facility</form:option>
@@ -141,7 +151,7 @@
 											</td>
 										</tr>
 									</table>
-									<button type="submit" name="submit_form" class="btn btn-danger">Submit</button>
+									<button type="submit" class="btn btn-danger">Submit</button>
 								</div>
 							</form:form>
 						</div>
